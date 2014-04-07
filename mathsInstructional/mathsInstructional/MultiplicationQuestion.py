@@ -8,11 +8,10 @@ A multiplication question asks for the product of first and second
 
 class MultiplicationQuestion(Question):
     def __init__(self, first, second):
-        self.super()
         self.first = first
         self.second = second
         self.reversed = False
-        self.answer = MyFraction(first*second)
+        self.answer = MyFraction(first.reducedForm*second.reducedForm)
 
     def reverse(self):
         if self.reversed:
@@ -24,7 +23,7 @@ class MultiplicationQuestion(Question):
         first, second = self.first, self.second
         if self.reversed:
             second, first = first, second
-            return "%schr(158)%s" % (first, second)
+        return "%s%s%s" % (first, chr(158), second)
 
     def __repr__(self):
         first, second = self.first, self.second

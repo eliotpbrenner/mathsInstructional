@@ -11,10 +11,10 @@ class MyFraction:
     def __init__(self, *args, **kwargs):
         d = 1
         n = args[0]
-        if len(args > 1):
+        if len(args) > 1:
             d = args[1]
         m = 1
-        if len(args > 2):
+        if len(args) > 2:
             m = args[2]
         self.reducedForm = Fraction(n, d)
         self.multiple = m
@@ -26,6 +26,6 @@ class MyFraction:
         return self.multiple
 
     def __str__(self):
-        return "(%s,%s)" % (self.mutliple*self.reducedForm.numerator,
-                            self.mutliple*self.reducedForm.denominator)
+        return "(%s,%s)" % (self.multiple*self.reducedForm.numerator,
+                            self.multiple*self.reducedForm.denominator)
 
